@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import Header from "../components/Header";
-import ProductList from "../components/ProductList";
-import Cart from "../components/Cart";
+import Header from "./src/components/Header";
+import ProductList from "./src/components/ProductList";
+import Cart from "./src/components/Cart";
 
 const fetchProducts = async () => {
   const res = await fetch(
