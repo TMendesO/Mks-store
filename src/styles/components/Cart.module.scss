@@ -1,0 +1,111 @@
+@use "../globals" as *;
+
+.cart {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background-color: $primary-color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  color: $secondary-color;
+  z-index: 1000;
+}
+
+.cartIcon {
+  cursor: pointer;
+  display: flex;
+  background-color: $secondary-color;
+  width: 3.5%;
+  height: inherit;
+  border-radius: 9%;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  z-index: 1001;
+}
+
+.itemCount {
+  background-color: $secondary-color;
+  color: $primary-color;
+  border-radius: 50%;
+  padding: 0 6px;
+  margin-left: 5px;
+}
+
+.checkout {
+  position: fixed;
+  top: 6%;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  background-color: $primary-color;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  color: $secondary-color;
+  overflow-y: auto;
+}
+
+.show {
+  transform: translateX(0);
+}
+
+.productContainer {
+  background-color: #fff;
+  color: $primary-color;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.actionButton {
+  background-color: $primary-color;
+  color: $secondary-color;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.finalizeButton {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.total {
+  margin-top: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 70px;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
