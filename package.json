@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@astrojs/vercel": "^7.6.0",
     "framer-motion": "^6.2.6",
     "next": "^14.2.3",
     "react": "^18.2.0",
