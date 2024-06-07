@@ -1,13 +1,13 @@
-import React from 'react';
-import ProductItem from './ProductItem';
-import styles from '../styles/components/ProductList.module.scss';
+import React from "react";
+import ProductItem from "./ProductItem";
+import styles from "../styles/components/ProductList.module.scss";
 
 interface Product {
   id: number;
   name: string;
   description: string;
-  price: number;
-  image: string;
+  price: string;
+  photo: string;
 }
 
 interface ProductListProps {
@@ -16,9 +16,10 @@ interface ProductListProps {
 }
 
 const ProductList: React.FC<ProductListProps> = ({ products, addToCart }) => {
+  console.log("ProductList products:", products);
   return (
-    <div className={styles['product-list']}>
-      {products.map(product => (
+    <div className={styles["product-list"]}>
+      {products.map((product) => (
         <ProductItem key={product.id} product={product} addToCart={addToCart} />
       ))}
     </div>

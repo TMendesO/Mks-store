@@ -1,12 +1,12 @@
-import React from 'react';
-import styles from '../styles/components/ProductItem.module.scss';
+import React from "react";
+import styles from "../styles/components/ProductItem.module.scss";
 
 interface Product {
   id: number;
   name: string;
   description: string;
-  price: number;
-  image: string;
+  price: string;
+  photo: string;
 }
 
 interface ProductItemProps {
@@ -15,14 +15,30 @@ interface ProductItemProps {
 }
 
 const ProductItem: React.FC<ProductItemProps> = ({ product, addToCart }) => {
+  const price = parseFloat(product.price);
+
   return (
-    <div className={styles['product-item']}>
-      <img src={product.image} alt={product.name} />
-      <div className={styles['product-info']}>
-        <div className={styles['product-name']}>{product.name}</div>
-        <div className={styles['product-description']}>{product.description}</div>
-        <div className={styles['product-price']}>R${typeof product.price === 'number' ? `R$${product.price.toFixed(2)}` : 'Preço indisponível'}</div> 
-        <button className={styles['buy-button']} onClick={() => addToCart(product)}>Comprar</button>
+    <div className={styles["product-item"]}>
+      <img src={product.photo} alt={product.name} />
+      <div className={styles["product-info"]}>
+        <div className={styles["product-name"]}>{product.name}</div>
+        <div className={styles["product-description"]}>
+          {product.description}
+        </div>
+        <div className={styles["product-price"]}>
+          {isNaN(price)
+            ? "Preço indisponível"
+            : `R$${price.toLocaleString("pt-BR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}`}
+        </div>
+        <button
+          className={styles["buy-button"]}
+          onClick={() => addToCart(product)}
+        >
+          Comprar
+        </button>
       </div>
     </div>
   );
